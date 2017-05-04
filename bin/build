@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+let BuildDaily = require('../lib/build_daily')
+let BuildPublish = require('../lib/build_publish')
+let buildDaily = new BuildDaily()
+let buildPublish = new BuildPublish()
+let Logger = require('../lib/logger')
+let logger = new Logger()
+let refName
+
+if (/daily\/[\d]*.[\d]*.[\d]*$/.test(refName)) {
+  logger.info('您提交的是一个日常发布,进入日常发布流程...')
+  buildDaily.run()
+} else if (/publish\/[\d]*.[\d]*.[\d]*$/.test(refName)) {
+  logger.info('您提交的是一个正式发布,进入正式发布流程...')
+  buildPublish.run()
+} else {
+  logger.error('您提交的格式不对,请检查后重新提交.')
+
+}
