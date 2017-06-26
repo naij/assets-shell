@@ -1,0 +1,1 @@
+define("app/vclick",["magix","jquery"],function(t){var e=t("magix"),r=t("jquery");r("body").on("click","a",function(t){var a=r(t.currentTarget),c=a.attr("href"),i=a.attr("vclick-ignore");c&&/^\/[^\/]/.test(c)&&!i&&(t.preventDefault(),e.Router.to(c))})});
