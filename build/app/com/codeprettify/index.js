@@ -1,0 +1,1 @@
+define("app/com/codeprettify/index",["magix","jquery","prettify"],function(t,e,i){var r=t("magix"),n=t("jquery"),p=t("prettify");i.exports=r.View.extend({ctor:function(t){this.opt=t},render:function(){n("pre").addClass("prettyprint linenums"),p.prettyPrint()}})});

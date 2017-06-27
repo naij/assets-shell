@@ -1,0 +1,1 @@
+define("app/views/common/404",["magix"],function(i,e,s){var t=i("magix");s.exports=t.View.extend({tmpl:'<div class="status-404"><img src="/assets/img/404.jpg"></div>',render:function(){var i=this;i.setView()}})});
